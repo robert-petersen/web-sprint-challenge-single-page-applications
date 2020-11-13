@@ -60,10 +60,10 @@ const App = () => {
       sausage: newOrder.sausage,
       mushrooms: newOrder.mushrooms,
     }
-    setOrderList({
+    setOrderList([
       newOrderSubmit,
       ...orderList
-    });
+    ]);
   }
 
   useEffect(() => {
@@ -90,7 +90,7 @@ const App = () => {
             errors={errors}
             disabled={disabled}
             formChange={formChange}
-            formsubmit={formSubmit}
+            formSubmit={formSubmit}
           />
         </Route>
 

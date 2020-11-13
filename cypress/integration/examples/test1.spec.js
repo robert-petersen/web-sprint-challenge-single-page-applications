@@ -1,15 +1,19 @@
+
 describe("Text input, topping selections, and submit functionality", ()=>{
+  
   beforeEach(()=>{
-    crypto.visit("http://localhost:3000/");
+    cy.visit("http://localhost:3000/");
+    cy.get("[href='/order']").click();
   });
 
   const firstNameInput = () => cy.get('input[name="first_name"]');
   const lastNameInput = () => cy.get('input[name="last_name"]');
-  const toppingSelection = () => cy.get('input[name="size"]');
+  const toppingPepperoni = () => cy.get('input[name="pepperoni"]');
+  const toppingsausage = () => cy.get('input[name="sausage"]');
   // ^ how to select checkboxes?
   // do I need to select them all
   // would have tried / researched but I ran out of time
-  const sizeInput = () => cy.get('input[name="size"]');
+  const sizeInput = () => cy.get('select[name="size"]');
   const submitButton = () => cy.get("#submitButton");
 
   it("can type in first name input", () => {
@@ -27,15 +31,19 @@ describe("Text input, topping selections, and submit functionality", ()=>{
   });
 
   it("can select multiple toppings", () => {
-    toppingSelection()
+    toppingPepperoni()
+      .check()
+      .should("be.checked");
       
   });
 
   it("can submit order", () => {
+    cy.contains("bob").should("not.exist");
     firstNameInput().type("bob");
     lastNameInput().type("bob");
-    sizeInput() // how to check selections?
-    toppingSelection() // how to check check boxes?
+    sizeInput().should("exist");
+    sizeInput().select("Small"); 
+      // how to check selections? // how to check check boxes?
     submitButton().click();
     // check if it exists
 

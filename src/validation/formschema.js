@@ -13,5 +13,5 @@ export default Yup.object().shape({
   pepperoni: Yup.bool(),
   spinach: Yup.bool(),
   sausage: Yup.bool(),
-  mushroom: Yup.bool(),
+  mushrooms: Yup.bool(),
 })

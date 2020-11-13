@@ -16,22 +16,3 @@ export default function Finished(props){
     </div>
   );
 }
-
-
-
-// import React from "react";
-// import NoOrders from "./NoOrders";
-// import ShowOrders from "./ShowOrders";
-
-// export default function Finished(props){
-//   const {orderList} = props;
-//   return(
-//     <div>
-//       <h1>Placed Orders:</h1>
-//       {orderList === [] ? 
-//         <NoOrders /> : 
-//         <ShowOrders orderList={orderList}/>
-//       }
-//     </div>
-//   );
-// }

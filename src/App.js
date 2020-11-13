@@ -55,7 +55,10 @@ const App = () => {
       first_name: newOrder.first_name.trim(),
       last_name: newOrder.last_name.trim(),
       size: newOrder.size,
-      toppings: ["pepperoni", "spinach", "sausage", "mushrooms"].filter((top)=>newOrder[top]),
+      pepperoni: newOrder.pepperoni,
+      spinach: newOrder.spinach,
+      sausage: newOrder.sausage,
+      mushrooms: newOrder.mushrooms,
     }
     setOrderList({
       newOrderSubmit,

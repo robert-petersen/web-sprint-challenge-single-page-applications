@@ -7,7 +7,12 @@ export default function Order(props){
       <h3>{details.id}</h3>
       <p>Name: {details.first_name} {details.last_name}</p>
       <p>Pizza Size: {details.size}</p>
-      <p>Toppings: {details.toppings}</p>
+      <p>Toppings: <br/>  
+        pepperoni: {details.pepperoni} <br/> 
+        spinach: {details.spinach}<br/> 
+        sausage: {details.sausage}<br/> 
+        mushrooms: {details.mushrooms}
+      </p>
     </div>
   );
 }
